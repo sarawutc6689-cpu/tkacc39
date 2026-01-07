@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK บัญชี - บริการแบบนิติบุคคล | เริ่มต้นเพียง 1,000 บาท/เดือน</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>บริการทำบัญชีนิติบุคคล - เริ่มต้นเพียงเดือนละ 1,000 บาท</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-light: #e8f5e9;
-            --primary-medium: #c8e6c9;
-            --primary-dark: #81c784;
-            --primary-deep: #4caf50;
-            --accent-light: #fff9c4;
-            --accent-medium: #ffeb3b;
-            --accent-dark: #fbc02d;
-            --text-dark: #2e7d32;
-            --text-light: #ffffff;
-            --gray-light: #f5f5f5;
-            --gray-medium: #e0e0e0;
-            --gray-dark: #757575;
-            --shadow: rgba(0, 0, 0, 0.08);
-            --shadow-hover: rgba(0, 0, 0, 0.15);
+            --primary: #059669;
+            --primary-light: #d1fae5;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --gradient: linear-gradient(135deg, #059669 0%, #047857 100%);
         }
         
         * {
@@ -32,688 +32,706 @@
         
         body {
             font-family: 'Sarabun', sans-serif;
-            background-color: white;
-            color: #333;
             line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Kanit', sans-serif;
+            font-weight: 600;
         }
         
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Header Styles */
         header {
-            background-color: white;
-            padding: 15px 0;
-            box-shadow: 0 3px 10px var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background: var(--gradient);
+            color: white;
+            padding: 2.5rem 0;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
         }
         
         .header-content {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
         
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
+            margin-bottom: 1.5rem;
         }
         
-        .logo-icon {
-            background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary-dark) 100%);
+        .logo i {
+            font-size: 3rem;
+            color: var(--accent);
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .badge {
+            background-color: var(--accent);
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 4px 8px var(--shadow);
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+            font-size: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
         
-        .logo-text h1 {
-            font-family: 'Kanit', sans-serif;
-            font-weight: 700;
-            color: var(--text-dark);
-            font-size: 28px;
-            line-height: 1;
-        }
-        
-        .logo-text p {
-            color: var(--gray-dark);
-            font-size: 14px;
-        }
-        
-        .highlight-text {
-            color: var(--primary-deep);
-            font-weight: 700;
-        }
-        
-        /* Navigation */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 16px;
-            padding: 8px 15px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-        
-        nav a:hover, nav a.active {
-            background-color: var(--primary-light);
-            color: var(--text-dark);
-        }
-        
-        /* Service Hero */
-        .service-hero {
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
-            text-align: center;
-        }
-        
-        .service-hero h1 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 42px;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-        }
-        
-        .service-hero p {
-            font-size: 20px;
-            color: var(--gray-dark);
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
             max-width: 800px;
-            margin: 0 auto;
+            line-height: 1.8;
         }
         
-        /* Service Details */
-        .service-details {
-            padding: 80px 0;
+        .entity-type {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(5px);
+            margin-top: 1rem;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 5rem 0;
+            background-color: #f8fafc;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 3.5rem;
+            color: var(--dark);
         }
         
         .section-title h2 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 36px;
-            color: var(--text-dark);
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
         }
         
         .section-title p {
-            color: var(--gray-dark);
-            font-size: 18px;
+            color: var(--gray);
+            font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
         }
         
-        /* Pricing Table */
-        .pricing-table {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px var(--shadow);
-            margin-bottom: 80px;
-        }
-        
-        .pricing-header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .pricing-header h3 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        .starting-price {
-            font-size: 48px;
-            font-weight: 700;
-            margin: 15px 0;
-        }
-        
-        .starting-price small {
-            font-size: 20px;
-            font-weight: 400;
-        }
-        
-        .table-container {
-            overflow-x: auto;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        thead {
-            background-color: var(--primary-light);
-        }
-        
-        th {
-            padding: 20px;
-            text-align: center;
-            font-family: 'Kanit', sans-serif;
-            font-size: 18px;
-            color: var(--text-dark);
-            border-bottom: 2px solid var(--primary-medium);
-        }
-        
-        td {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--gray-medium);
-        }
-        
-        tr:nth-child(even) {
-            background-color: var(--gray-light);
-        }
-        
-        tr:hover {
-            background-color: var(--primary-light);
-        }
-        
-        .highlight-row {
-            background-color: var(--accent-light) !important;
-            font-weight: 600;
-        }
-        
-        .price-amount {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-deep);
-        }
-        
-        /* Responsibilities */
-        .responsibilities {
-            background-color: var(--gray-light);
-            border-radius: 15px;
-            padding: 50px;
-            box-shadow: 0 10px 20px var(--shadow);
-            margin-bottom: 60px;
-        }
-        
-        .responsibilities h3 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 28px;
-            color: var(--text-dark);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .responsibilities-list {
+        .pricing-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
         
-        .responsibility-item {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px var(--shadow);
+        .price-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            border-top: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
         }
         
-        .responsibility-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px var(--shadow-hover);
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
         }
         
-        .responsibility-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary-light);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: var(--primary-deep);
-            font-size: 24px;
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
         
-        .responsibility-item h4 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 20px;
-            color: var(--text-dark);
-            margin-bottom: 15px;
+        .price-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
         }
         
-        /* Note Section */
-        .note-section {
-            background-color: var(--accent-light);
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 80px;
-            border-left: 5px solid var(--accent-dark);
+        .price-card.featured:hover {
+            transform: translateY(-10px) scale(1.05);
         }
         
-        .note-section h4 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 22px;
-            color: var(--text-dark);
-            margin-bottom: 20px;
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bill-range {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .note-section p {
-            font-size: 18px;
-            color: var(--gray-dark);
+        .bill-range i {
+            color: var(--primary);
+        }
+        
+        .price {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .price span {
+            font-size: 1.2rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #ffffff 0%, #f0f9ff 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, #a7f3d0 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+            box-shadow: 0 4px 10px rgba(5, 150, 105, 0.2);
+        }
+        
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            min-height: 3.5rem;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Comparison Section */
+        .comparison-section {
+            padding: 4rem 0;
+            background-color: var(--primary-light);
+            border-radius: 30px;
+            margin: 3rem auto;
+            max-width: 95%;
+        }
+        
+        .comparison-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .comparison-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .comparison-content p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        /* Note Section */
+        .note-section {
+            padding: 4rem 0;
+        }
+        
+        .note-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent);
+            background: linear-gradient(to right, #fffbeb 0%, #fef3c7 30%, white 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .note-card::before {
+            content: '!';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            opacity: 0.1;
+        }
+        
+        .note-card h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .note-card h3 i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+        
+        .note-card p {
+            color: var(--dark);
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
         
         /* CTA Section */
-        .cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
-            color: white;
+        .cta-section {
+            padding: 5rem 0;
             text-align: center;
-            border-radius: 20px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #1d4ed8 100%);
+            color: white;
+            border-radius: 40px;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
         }
         
-        .cta h2 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 42px;
-            margin-bottom: 20px;
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,50 Q25,40 50,50 T100,50" stroke="white" stroke-width="1" fill="none" opacity="0.1"/><path d="M0,30 Q25,20 50,30 T100,30" stroke="white" stroke-width="1" fill="none" opacity="0.1"/><path d="M0,70 Q25,60 50,70 T100,70" stroke="white" stroke-width="1" fill="none" opacity="0.1"/></svg>');
+            opacity: 0.3;
         }
         
-        .cta p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
+        .cta-content {
+            position: relative;
+            z-index: 2;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 16px 35px;
-            background: linear-gradient(135deg, var(--accent-medium) 0%, var(--accent-dark) 100%);
-            color: var(--text-dark);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 18px;
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            background-color: white;
+            color: var(--secondary);
             border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 12px rgba(251, 192, 45, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
         
-        .btn:hover {
+        .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(251, 192, 45, 0.4);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-medium) 0%, var(--accent-dark) 100%);
-            color: var(--text-dark);
-            font-size: 20px;
-            padding: 18px 40px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            background-color: #f0f9ff;
         }
         
         /* Footer */
         footer {
-            background-color: var(--text-dark);
+            background-color: var(--dark);
             color: white;
-            padding: 60px 0 30px;
-            margin-top: 80px;
+            padding: 3rem 0 2rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         .footer-column h3 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 22px;
-            margin-bottom: 25px;
-            color: var(--accent-light);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            opacity: 0.9;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--accent-light);
-            padding-left: 5px;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-light);
         }
         
         .contact-info {
             display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
+            gap: 12px;
+            font-size: 1rem;
+        }
+        
+        .contact-item i {
+            color: var(--primary-light);
+            width: 20px;
         }
         
         .copyright {
-            text-align: center;
-            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 15px;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+            opacity: 0.7;
         }
         
         /* Responsive Design */
         @media (max-width: 992px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
+            .pricing-container {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .service-hero h1 {
-                font-size: 36px;
-            }
-            
-            .section-title h2 {
-                font-size: 30px;
-            }
-            
-            .cta h2 {
-                font-size: 32px;
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
         @media (max-width: 768px) {
-            .service-hero h1 {
-                font-size: 30px;
+            .pricing-container {
+                grid-template-columns: 1fr;
             }
             
-            .starting-price {
-                font-size: 36px;
+            .price-card.featured {
+                transform: none;
             }
             
-            .responsibilities {
-                padding: 30px;
+            .price-card.featured:hover {
+                transform: translateY(-10px);
             }
             
-            .note-section {
-                padding: 30px;
+            .services-grid {
+                grid-template-columns: 1fr;
             }
             
-            th, td {
-                padding: 15px 10px;
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+            
+            .logo i {
+                font-size: 2.5rem;
+            }
+            
+            .badge {
+                font-size: 1.1rem;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .price-card {
+                padding: 1.5rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+            
+            .note-card {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-calculator"></i>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-building"></i>
+                    <h1>บริการทำบัญชีนิติบุคคล</h1>
                 </div>
-                <div class="logo-text">
-                    <h1>TK <span class="highlight-text">บัญชี</span></h1>
-                    <p>บริการรับทำบัญชีครบวงจรสำหรับธุรกิจทุกขนาด</p>
+                <div class="badge">
+                    เริ่มต้นเดือนละ 1,000 บาท
+                </div>
+                <p class="tagline">บริการบัญชีครบวงจรสำหรับบริษัท ห้างหุ้นส่วน และนิติบุคคลทุกประเภท โดยทีมงานมืออาชีพที่มีประสบการณ์</p>
+                <div class="entity-type">
+                    <i class="fas fa-check-circle"></i>
+                    เหมาะสำหรับ: บริษัทจำกัด, ห้างหุ้นส่วนจำกัด, มูลนิธิ, สมาคม
                 </div>
             </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> หน้าหลัก</a></li>
-                    <li><a href="individual.html"><i class="fas fa-user-tie"></i> บุคคลธรรมดา</a></li>
-                    <li><a href="corporate.html" class="active"><i class="fas fa-briefcase"></i> นิติบุคคล</a></li>
-                    <li><a href="#contact"><i class="fas fa-phone-alt"></i> ติดต่อเรา</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <!-- Service Hero -->
-    <section class="service-hero">
+    <!-- Pricing Section -->
+    <section class="pricing-section">
         <div class="container">
-            <h1>บริการรับทำบัญชีสำหรับนิติบุคคล</h1>
-            <p>บริการครบวงจรสำหรับบริษัท ห้างหุ้นส่วน และองค์กรธุรกิจทุกประเภท โดยทีมนักบัญชีมืออาชีพ</p>
+            <div class="section-title">
+                <h2>อัตราค่าบริการรายเดือน</h2>
+                <p>ราคาค่าบริการทำบัญชีสำหรับนิติบุคคล ตามจำนวนบิล (ใบกำกับภาษี) ที่ต้องรับผิดชอบต่อเดือน</p>
+            </div>
+            
+            <div class="pricing-container">
+                <!-- Price cards will be generated by JavaScript -->
+            </div>
+            
+            <p style="text-align: center; color: var(--gray); font-style: italic; font-size: 1.1rem;">
+                *ราคาดังกล่าวเป็นราคารายเดือนสำหรับบริการทำบัญชีนิติบุคคลแบบครบวงจร
+            </p>
         </div>
     </section>
 
-    <!-- Service Details -->
-    <section class="service-details">
+    <!-- Services Section -->
+    <section class="services-section">
         <div class="container">
             <div class="section-title">
-                <h2>อัตราค่าบริการรายเดือนสำหรับนิติบุคคล</h2>
-                <p>คิดค่าบริการตามจำนวนบิล โดยเริ่มต้นเพียง 1,000 บาท/เดือน</p>
+                <h2>ลักษณะงานที่รับผิดชอบ</h2>
+                <p>รับทำบัญชีนิติบุคคลครบวงจร ครอบคลุมงานบัญชี ภาษี และงบการเงินตามกฎหมาย</p>
             </div>
             
-            <!-- Pricing Table -->
-            <div class="pricing-table">
-                <div class="pricing-header">
-                    <h3>ตารางอัตราค่าบริการรายเดือน</h3>
-                    <p>สำหรับนิติบุคคลและบริษัทต่างๆ</p>
-                    <div class="starting-price">1,000 <small>บาท/เดือน</small></div>
-                    <p>เริ่มต้นสำหรับ 0-30 บิลต่อเดือน</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>ตรวจสอบใบกำกับภาษีซื้อขาย</h3>
+                    <p>ตรวจสอบเอกสารการลงบัญชีทั่วไป ใบกำกับภาษีซื้อขายอย่างละเอียด</p>
                 </div>
                 
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>จำนวนบิลต่อเดือน</th>
-                                <th>อัตราค่าบริการ</th>
-                                <th>หมายเหตุ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>0 - 30 บิล</td>
-                                <td><span class="price-amount">1,000</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับบริษัทเริ่มต้น</td>
-                            </tr>
-                            <tr>
-                                <td>31 - 60 บิล</td>
-                                <td><span class="price-amount">1,500</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับธุรกิจขนาดเล็ก</td>
-                            </tr>
-                            <tr>
-                                <td>61 - 120 บิล</td>
-                                <td><span class="price-amount">2,000</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับธุรกิจ SME</td>
-                            </tr>
-                            <tr>
-                                <td>121 - 160 บิล</td>
-                                <td><span class="price-amount">2,500</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับธุรกิจที่เติบโต</td>
-                            </tr>
-                            <tr>
-                                <td>161 - 200 บิล</td>
-                                <td><span class="price-amount">3,000</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับบริษัทขนาดกลาง</td>
-                            </tr>
-                            <tr>
-                                <td>201 - 240 บิล</td>
-                                <td><span class="price-amount">3,500</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับบริษัทที่มีการขายต่อเนื่อง</td>
-                            </tr>
-                            <tr>
-                                <td>241 - 280 บิล</td>
-                                <td><span class="price-amount">4,000</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับบริษัทที่ขยายตัว</td>
-                            </tr>
-                            <tr>
-                                <td>281 - 320 บิล</td>
-                                <td><span class="price-amount">4,500</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับธุรกิจที่มีหลายสาขา</td>
-                            </tr>
-                            <tr>
-                                <td>321 - 360 บิล</td>
-                                <td><span class="price-amount">5,000</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับบริษัทที่มีโครงสร้างซับซ้อน</td>
-                            </tr>
-                            <tr>
-                                <td>361 - 400 บิล</td>
-                                <td><span class="price-amount">5,500</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับบริษัทชั้นนำ</td>
-                            </tr>
-                            <tr>
-                                <td>401 - 440 บิล</td>
-                                <td><span class="price-amount">6,000</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับองค์กรขนาดใหญ่</td>
-                            </tr>
-                            <tr>
-                                <td>441 - 480 บิล</td>
-                                <td><span class="price-amount">6,500</span> บาท/เดือน</td>
-                                <td>เหมาะสำหรับองค์กรข้ามชาติ</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
-            <!-- Responsibilities -->
-            <div class="responsibilities">
-                <h3>ลักษณะงานที่รับผิดชอบสำหรับนิติบุคคล</h3>
-                <div class="responsibilities-list">
-                    <div class="responsibility-item">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-file-invoice"></i>
-                        </div>
-                        <h4>ตรวจสอบใบกำกับภาษีและเอกสาร</h4>
-                        <p>ตรวจสอบใบกำกับภาษีซื้อขาย เอกสารการลงบัญชีทั่วไป และเอกสารทางการเงินทั้งหมด</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book-open"></i>
                     </div>
-                    
-                    <div class="responsibility-item">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h4>ลงบันทึกบัญชีรายวัน</h4>
-                        <p>ลงสมุดรายวันซื้อ ขาย จ่าย รับ และสมุดรายวันทั่วไปตามมาตรฐานการบัญชี</p>
-                    </div>
-                    
-                    <div class="responsibility-item">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h4>จัดทำรายงานภาษี</h4>
-                        <p>จัดทำรายงานภาษีซื้อขาย กรอกแบบยื่นแบบ ภ.พ.30 ตามกำหนดเวลากฎหมาย</p>
-                    </div>
-                    
-                    <div class="responsibility-item">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h4>จัดการทรัพย์สินและค่าเสื่อม</h4>
-                        <p>จัดทำบัญชีทรัพย์สิน คิดคำนวณค่าเสื่อมราคาตามมาตรฐานการบัญชี</p>
-                    </div>
-                    
-                    <div class="responsibility-item">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4>จัดทำงบการเงิน</h4>
-                        <p>จัดทำงบดุล งบกำไร ขาดทุน งบต้นทุน ทั้งรายเดือนและรายปี</p>
-                    </div>
-                    
-                    <div class="responsibility-item">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h4>ตรวจสอบและรับรองงบการเงิน</h4>
-                        <p>ตรวจสอบเอกสารรับรองงบการเงินโดยผู้สอบบัญชีที่ได้รับใบอนุญาต</p>
-                    </div>
-                    
-                    <div class="responsibility-item">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-file-contract"></i>
-                        </div>
-                        <h4>ยื่นภาษีเงินได้นิติบุคคล</h4>
-                        <p>จัดทำและยื่น ภ.ง.ด. 50 / ภ.ง.ด.51 / สบช.3 ตามกำหนดเวลากฎหมาย</p>
-                    </div>
-                    
-                    <div class="responsibility-item">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h4>ให้คำปรึกษาทางบัญชีและภาษี</h4>
-                        <p>ให้คำแนะนำเกี่ยวกับการวางแผนภาษีและกลยุทธ์ทางบัญชีสำหรับนิติบุคคล</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Note Section -->
-            <div class="note-section">
-                <h4><i class="fas fa-info-circle"></i> หมายเหตุสำคัญ</h4>
-                <p>บริการปิดงบรายเดือนภายใน 7 วันทำการหลังจากได้รับเอกสารและรับชำระเงินของลูกค้าเป็นที่เรียบร้อยแล้ว ส่วนการคืนเอกสารจะคืนให้ลูกค้าเมื่อสิ้นปีงบประมาณ</p>
-                <p style="margin-top: 15px;"><strong>อัตราค่าบริการข้างต้นไม่รวม:</strong> ค่าธรรมเนียมราชการ, ค่าจดทะเบียนต่างๆ, ค่าบริการนอกเหนือจากที่ระบุ และค่าบริการเพิ่มเติมอื่นๆ ตามความต้องการของลูกค้า</p>
-            </div>
-            
-            <!-- CTA Section -->
-            <div class="cta" id="contact">
-                <h2>สนใจใช้บริการรับทำบัญชีสำหรับนิติบุคคล?</h2>
-                <p>ติดต่อเราเพื่อรับคำปรึกษาฟรี พร้อมวิเคราะห์ความต้องการทางบัญชีของบริษัทคุณโดยไม่เสียค่าใช้จ่าย</p>
-                
-                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px;">
-                    <div style="text-align: center;">
-                        <div style="background-color: white; color: var(--text-dark); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 30px;">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3 style="font-family: 'Kanit', sans-serif; margin-bottom: 10px;">โทรเลย</h3>
-                        <p style="font-size: 24px; font-weight: 700;">02-123-4567</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="background-color: white; color: var(--text-dark); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 30px;">
-                            <i class="fas fa-line"></i>
-                        </div>
-                        <h3 style="font-family: 'Kanit', sans-serif; margin-bottom: 10px;">ไลน์</h3>
-                        <p style="font-size: 24px; font-weight: 700;">@tkaccounting</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="background-color: white; color: var(--text-dark); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 30px;">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 style="font-family: 'Kanit', sans-serif; margin-bottom: 10px;">อีเมล</h3>
-                        <p style="font-size: 20px; font-weight: 700;">corporate@tkaccounting.com</p>
-                    </div>
+                    <h3>ลงสมุดรายวันซื้อ ขาย จ่าย รับ</h3>
+                    <p>จัดทำสมุดรายวันทั่วไป ตามหลักการบัญชีที่รับรองทั่วไป</p>
                 </div>
                 
-                <a href="tel:021234567" class="btn btn-primary" style="margin-top: 50px;">
-                    <i class="fas fa-phone-alt"></i> โทรขอคำปรึกษาฟรีทันที
-                </a>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>จัดทำรายงานภาษีซื้อขาย</h3>
+                    <p>วิเคราะห์และจัดทำรายงานภาษีซื้อขาย (VAT) อย่างถูกต้องครบถ้วน</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>กรอกแบบยื่นแบบ ภ.พ.30</h3>
+                    <p>จัดเตรียมและยื่นแบบภาษีมูลค่าเพิ่ม (ภ.พ.30) รายเดือน/รายครึ่งปี</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>จัดทำบัญชีทรัพย์สิน คำนวณค่าเสื่อมราคา</h3>
+                    <p>จัดทำบัญชีทรัพย์สินถาวร คิดคำนวณค่าเสื่อมราคาตามกฎหมาย</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>จัดทำงบดุล งบกำไรขาดทุน</h3>
+                    <p>จัดทำงบดุล งบกำไรขาดทุน งบต้นทุน ทั้งรายเดือนและรายปี</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>ตรวจสอบเอกสารรับรองงบการเงิน</h3>
+                    <p>ตรวจสอบเอกสารรับรองงบการเงินโดยผู้สอบบัญชีที่ได้รับใบอนุญาต</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3>จัดทำ ภ.ง.ด.50 / ภ.ง.ด.51 / สบช.3</h3>
+                    <p>จัดทำและยื่นนำส่งแบบภาษีเงินได้นิติบุคคลและแบบสรุปการนำส่งภาษี</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="comparison-content">
+                <h3>บริการครบวงจรในราคาที่เหมาะสม</h3>
+                <p>เราให้บริการทำบัญชีนิติบุคคลแบบครบวงจร ตั้งแต่การบันทึกบัญชีรายวัน จนถึงการจัดทำและยื่นรายงานภาษี พร้อมให้คำปรึกษาด้านการบัญชีและการเงินสำหรับธุรกิจของคุณ</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 50px; color: var(--primary); font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <i class="fas fa-shield-alt"></i> ได้รับการรับรองมาตรฐาน
+                    </div>
+                    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 50px; color: var(--primary); font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <i class="fas fa-clock"></i> รวดเร็ว ทันเวลา
+                    </div>
+                    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 50px; color: var(--primary); font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <i class="fas fa-lock"></i> ความปลอดภัยของข้อมูล
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Note Section -->
+    <section class="note-section">
+        <div class="container">
+            <div class="note-card">
+                <h3><i class="fas fa-exclamation-triangle"></i> หมายเหตุสำคัญ</h3>
+                <p>บริการปิดงบรายเดือนภายใน 7 วันทำการหลังจากได้รับเอกสารและรับชำระเงินของลูกค้าเป็นที่เรียบร้อยแล้ว ส่วนการคืนเอกสารจะคืนให้ลูกค้าเมื่อสิ้นปีงบประมาณหรือตามที่กำหนดในสัญญาบริการ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>พร้อมพัฒนาธุรกิจด้วยระบบบัญชีที่ถูกต้อง?</h2>
+                <p>ปรึกษาฟรี! ไม่มีค่าใช้จ่าย ทีมงานมืออาชีพพร้อมให้คำแนะนำและข้อเสนอที่เหมาะสมสำหรับนิติบุคคลของคุณ โดยพิจารณาจากขนาดธุรกิจและปริมาณงานจริง</p>
+                <button class="cta-button" id="contactBtn">
+                    <i class="fas fa-phone-alt"></i> ติดต่อขอคำปรึกษาฟรี
+                </button>
+                <p style="margin-top: 1.5rem; font-size: 1rem; opacity: 0.8;">
+                    <i class="fas fa-envelope"></i> หรือส่งเอกสารมาประเมินราคาล่วงหน้า: info.tkacc39@gmail.com
+                </p>
             </div>
         </div>
     </section>
@@ -723,148 +741,125 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>TK บัญชี</h3>
-                    <p>บริการรับทำบัญชีครบวงจรสำหรับนิติบุคคล โดยทีมนักบัญชีมืออาชีพที่มีประสบการณ์กว่า 10 ปี พร้อมรับรองความถูกต้องตามมาตรฐานการบัญชี</p>
-                    <div style="margin-top: 20px;">
-                        <a href="https://sites.google.com/view/tkacc39/home" target="_blank" style="background-color: rgba(255, 255, 255, 0.1); padding: 10px 15px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px;">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>ดูข้อมูลเพิ่มเติมบน Google Sites</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>บริการสำหรับนิติบุคคล</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> บริการรับทำบัญชีรายเดือน</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> ตรวจสอบและยื่นภาษีประจำปี</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> จัดทำงบการเงินนิติบุคคล</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> ให้คำปรึกษาด้านบัญชีและภาษี</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> บริการผู้สอบบัญชีรับรอง</a></li>
-                    </ul>
+                    <h3>บริการทำบัญชีนิติบุคคล</h3>
+                    <p>ให้บริการบัญชีครบวงจรสำหรับนิติบุคคลทุกประเภท โดยทีมงานมืออาชีพที่มีประสบการณ์มากกว่า 10 ปี</p>
                 </div>
                 
                 <div class="footer-column">
                     <h3>ติดต่อเรา</h3>
                     <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>123 ถนนบัญชี แขวงสีลม เขตบางรัก กทม. 10500</span>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>096-234-9390</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info.tkacc39@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>จันทร์-เสาร์ 8:30-17:30 น.</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>ลำพูน</span>
+                        </div>
                     </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <span>02-123-4567 (สายด่วนนิติบุคคล)</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <span>corporate@tkaccounting.com</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-line"></i>
-                        <span>@tkaccounting</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-clock"></i>
-                        <span>จันทร์-ศุกร์ 8:30-17:30 น.</span>
-                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>บริการอื่นๆ</h3>
+                    <p>• บริการตรวจสอบบัญชี</p>
+                    <p>• บริการที่ปรึกษาด้านภาษี</p>
+                    <p>• บริการวางระบบบัญชี</p>
+                    <p>• บริการฝึกอบรมด้านบัญชี</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 TK Accounting Service. All rights reserved. | บริการรับทำบัญชีครบวงจรสำหรับนิติบุคคล</p>
-                <p style="margin-top: 10px; font-size: 14px;">ใบอนุญาตประกอบวิชาชีพการบัญชีเลขที่ กบ.1234/2566</p>
+                © 2026 บริการทำบัญชีนิติบุคคล. All rights reserved. || ออกแบบและพัฒนาโดยทีมงานเทคโนโลยีสสารสนเทศ @ TKACC39
             </div>
         </div>
     </footer>
 
     <script>
-        // เพิ่มเอฟเฟกต์เมื่อคลิกที่ปุ่มโทร
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', function() {
-                gtag('event', 'phone_call', {
-                    'event_category': 'engagement',
-                    'event_label': 'corporate_call_button_click'
+        // Pricing data for corporate entities
+        const corporatePricingData = [
+            { range: "0-30 บิล", price: "1,000", icon: "fas fa-file-invoice" },
+            { range: "31-60 บิล", price: "1,500", icon: "fas fa-file-invoice" },
+            { range: "61-120 บิล", price: "2,000", icon: "fas fa-file-invoice" },
+            { range: "121-160 บิล", price: "2,500", icon: "fas fa-file-alt" },
+            { range: "161-200 บิล", price: "3,000", icon: "fas fa-file-alt" },
+            { range: "201-240 บิล", price: "3,500", icon: "fas fa-file-contract" },
+            { range: "241-280 บิล", price: "4,000", icon: "fas fa-file-contract" },
+            { range: "281-320 บิล", price: "4,500", icon: "fas fa-file-signature" },
+            { range: "321-360 บิล", price: "5,000", icon: "fas fa-file-signature" },
+            { range: "361-400 บิล", price: "5,500", icon: "fas fa-file-certificate" },
+            { range: "401-440 บิล", price: "6,000", icon: "fas fa-file-certificate" },
+            { range: "441-480 บิล", price: "6,500", icon: "fas fa-file-certificate" }
+        ];
+
+        // Function to generate pricing cards
+        function generatePricingCards() {
+            const pricingContainer = document.querySelector('.pricing-container');
+            
+            corporatePricingData.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'price-card';
+                
+                // Make the 3rd card (61-120 bills) as featured
+                if (index === 2) {
+                    card.classList.add('featured');
+                    card.innerHTML += '<div class="featured-badge">แนะนำ</div>';
+                }
+                
+                card.innerHTML += `
+                    <div class="bill-range">
+                        <i class="${item.icon}"></i>
+                        <span>${item.range}</span>
+                    </div>
+                    <div class="price">${item.price} <span>บาท/เดือน</span></div>
+                    <p>บริการทำบัญชีนิติบุคคลครบวงจร พร้อมจัดทำและยื่นภาษี</p>
+                `;
+                
+                pricingContainer.appendChild(card);
+            });
+        }
+
+        // CTA Button functionality
+        function setupCTAButton() {
+            const ctaButton = document.getElementById('contactBtn');
+            ctaButton.addEventListener('click', function() {
+                const phoneNumber = "096-234-9390";
+                const email = "info.tkacc39@gmail.com";
+                
+                const message = `ขอบคุณที่สนใจบริการทำบัญชีนิติบุคคลของเรา!\n\nกรุณาติดต่อ:\n☎️ โทร: ${phoneNumber}\n✉️ อีเมล: ${email}\n\nทีมงานมืออาชีพของเราพร้อมให้คำปรึกษาฟรีสำหรับนิติบุคคลของคุณ`;
+                alert(message);
+            });
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            generatePricingCards();
+            setupCTAButton();
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
-        });
-        
-        // เพิ่มเอฟเฟกต์เมื่อเลื่อนเมาส์เหนือแถวตาราง
-        document.querySelectorAll('table tbody tr').forEach(row => {
-            row.addEventListener('mouseenter', function() {
-                if(!this.classList.contains('highlight-row')) {
-                    this.style.backgroundColor = 'var(--primary-light)';
-                }
-            });
-            
-            row.addEventListener('mouseleave', function() {
-                if(!this.classList.contains('highlight-row')) {
-                    if(Array.from(this.parentNode.children).indexOf(this) % 2 === 0) {
-                        this.style.backgroundColor = 'var(--gray-light)';
-                    } else {
-                        this.style.backgroundColor = 'white';
-                    }
-                }
-            });
-        });
-        
-        // เพิ่มฟังก์ชันสำหรับติดตามการคลิกปุ่ม
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const buttonText = this.textContent.trim();
-                console.log(`ผู้ใช้คลิกปุ่ม: ${buttonText} (หน้า Corporate)`);
-                
-                // สำหรับปุ่มขอคำปรึกษา
-                if(buttonText.includes('คำปรึกษาฟรี')) {
-                    setTimeout(() => {
-                        alert('ขอบคุณที่สนใจบริการสำหรับนิติบุคคล! เราจะติดต่อกลับภายใน 24 ชั่วโมงเพื่อให้คำปรึกษาโดยละเอียด');
-                    }, 500);
-                }
-            });
-        });
-        
-        // ฟังก์ชันสำหรับคำนวณค่าบริการโดยประมาณ
-        function estimateCost() {
-            const billsPerMonth = prompt('กรุณากรอกจำนวนบิลโดยประมาณต่อเดือน:');
-            if(billsPerMonth && !isNaN(billsPerMonth)) {
-                const bills = parseInt(billsPerMonth);
-                let cost = 0;
-                
-                if(bills <= 30) cost = 1000;
-                else if(bills <= 60) cost = 1500;
-                else if(bills <= 120) cost = 2000;
-                else if(bills <= 160) cost = 2500;
-                else if(bills <= 200) cost = 3000;
-                else if(bills <= 240) cost = 3500;
-                else if(bills <= 280) cost = 4000;
-                else if(bills <= 320) cost = 4500;
-                else if(bills <= 360) cost = 5000;
-                else if(bills <= 400) cost = 5500;
-                else if(bills <= 440) cost = 6000;
-                else if(bills <= 480) cost = 6500;
-                else cost = 'กรุณาติดต่อเพื่อสอบถามราคา';
-                
-                if(typeof cost === 'number') {
-                    alert(`สำหรับจำนวน ${bills} บิลต่อเดือน ค่าบริการประมาณ ${cost.toLocaleString()} บาท/เดือน`);
-                } else {
-                    alert(cost);
-                }
-            }
-        }
-        
-        // เพิ่มปุ่มคำนวณค่าบริการ
-        window.addEventListener('DOMContentLoaded', function() {
-            const ctaSection = document.querySelector('.cta');
-            const estimateButton = document.createElement('a');
-            estimateButton.href = '#';
-            estimateButton.className = 'btn';
-            estimateButton.style.marginLeft = '15px';
-            estimateButton.style.marginTop = '20px';
-            estimateButton.innerHTML = '<i class="fas fa-calculator"></i> คำนวณค่าบริการโดยประมาณ';
-            estimateButton.onclick = function(e) {
-                e.preventDefault();
-                estimateCost();
-            };
-            
-            ctaSection.querySelector('.btn-primary').parentNode.appendChild(estimateButton);
         });
     </script>
 </body>
