@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK_Acc - บริการรับทำบัญชีครบวงจร | เริ่มต้นเพียง 1,000 บาท/เดือน</title>
+    <title>TKACC39- บริการรับทำบัญชีครบวงจร | เริ่มต้นเพียง 1,000 บาท/เดือน</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -76,6 +76,16 @@
             justify-content: center;
             font-size: 24px;
             box-shadow: 0 4px 8px var(--shadow);
+            overflow: hidden;
+        }
+        
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px var(--shadow);
+            border: 1px solid var(--gray-medium);
         }
         
         .logo-text h1 {
@@ -94,6 +104,19 @@
         .highlight-text {
             color: var(--primary-deep);
             font-weight: 700;
+        }
+        
+        .contact-header {
+            text-align: right;
+        }
+        
+        .contact-header p {
+            margin-bottom: 5px;
+            color: var(--gray-dark);
+        }
+        
+        .contact-header strong {
+            color: var(--text-dark);
         }
         
         /* Hero Section */
@@ -146,7 +169,7 @@
         .hero-text .highlight {
             color: var(--accent-dark);
             background-color: rgba(255, 255, 255, 0.7);
-            padding: 0 10px;
+            padding: 0 15px;
             border-radius: 6px;
         }
         
@@ -154,6 +177,11 @@
             font-size: 20px;
             color: var(--gray-dark);
             margin-bottom: 25px;
+        }
+        
+        .benefits-list p {
+            font-size: 18px;
+            margin-bottom: 10px;
         }
         
         .btn {
@@ -396,6 +424,16 @@
             color: var(--gray-dark);
         }
         
+        .service-card ul {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .service-card li {
+            margin-bottom: 8px;
+        }
+        
         /* CTA Section */
         .cta {
             padding: 80px 0;
@@ -423,6 +461,36 @@
             font-size: 20px;
             padding: 18px 40px;
             border-radius: 10px;
+        }
+        
+        .cta-contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .cta-contact-item {
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        .cta-qr-code {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            background-color: white;
+        }
+        
+        .cta-qr-code:hover {
+            transform: scale(1.05);
         }
         
         /* Footer */
@@ -474,6 +542,37 @@
             margin-bottom: 15px;
         }
         
+        .contact-info.qr-code {
+            align-items: flex-start;
+        }
+        
+        .qr-code-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .qr-code-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            background-color: white;
+        }
+        
+        .qr-code-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .qr-code-text {
+            flex: 1;
+        }
+        
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -500,12 +599,20 @@
             .service-card.featured:hover {
                 transform: translateY(-10px) scale(1);
             }
+            
+            .cta-contact-grid {
+                gap: 20px;
+            }
         }
         
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 20px;
+            }
+            
+            .contact-header {
+                text-align: center;
             }
             
             .hero-text h1 {
@@ -519,6 +626,43 @@
             .cta h2 {
                 font-size: 32px;
             }
+            
+            .cta-contact-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .cta-contact-item {
+                min-width: 250px;
+            }
+            
+            .cta-qr-code {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .qr-code-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .qr-code-image {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cta-contact-item {
+                min-width: 200px;
+            }
+            
+            .cta-qr-code {
+                width: 80px;
+                height: 80px;
+            }
         }
     </style>
 </head>
@@ -526,17 +670,13 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://sarawutc6689-cpu.github.io/tkacc39/TK logo.jpg" 
-                     alt="TK Accounting Logo" 
-                     style="width: 50px; height: 50px; border-radius: 15px; object-fit: cover; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
-            </div>
             <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-calculator"></i>
-                </div>
+                <!-- ใส่โลโก้รูปภาพจาก GitHub Pages -->
+                <img src="https://sarawutc6689-cpu.github.io/tkacc39/TK%20logo.jpg" 
+                     alt="TK Accounting Logo" class="logo-image">
+                
                 <div class="logo-text">
-                    <h1>TK_Acc <span class="highlight-text">  บัญชี</span></h1>
+                    <h1>TK <span class="highlight-text">บัญชี</span></h1>
                     <p>บริการรับทำบัญชีครบวงจรสำหรับธุรกิจทุกขนาด</p>
                 </div>
             </div>
@@ -551,10 +691,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-                
-                <h1>ปล่อยงานบัญชีให้เรา <span class="highlight">
-                    คุณโฟกัสแค่ธุรกิจ</span></h1>
-            
+            <div class="hero-text">
+                <h1>ปล่อยงานบัญชีให้เรา</h1>
+                <div class="highlight" style="font-size: 48px; font-family: 'Kanit', sans-serif; margin-top: 15px;">คุณโฟกัสแค่ธุรกิจ</div>
                 <p>บริการรับทำบัญชีครบวงจร โดยทีมนักบัญชีมืออาชีพ ประสบการณ์กว่า 10 ปี เริ่มต้นเพียง 1,000 บาท/เดือน</p>
                 
                 <div class="benefits-list">
@@ -580,7 +719,7 @@
     <section class="benefits">
         <div class="container">
             <div class="section-title">
-                <h2>ทำไมต้องเลือก TK_Acc บัญชี?</h2>
+                <h2>ทำไมต้องเลือก TK บัญชี?</h2>
                 <p>เราเป็นมากกว่าผู้ให้บริการบัญชี เราเป็นพันธมิตรทางธุรกิจที่พร้อมช่วยคุณเติบโต</p>
             </div>
             
@@ -628,7 +767,7 @@
                     <h3>แพ็กเกจเริ่มต้น</h3>
                     <p>เหมาะสำหรับธุรกิจขนาดเล็กหรือร้านค้า แบบบุคคลธรรมดา</p>
                     <div class="service-price">เริ่มต้น 1,000 <small>บาท/เดือน</small></div>
-                    <ul style="text-align: left; margin: 20px 0; padding-left: 20px;">
+                    <ul>
                         <li>ยื่นภาษีมูลค่าเพิ่ม (ภพ.30)</li>
                         <li>ยื่นภาษีเงินได้หัก ณ ที่จ่าย (ภงด.90, 94) พร้อมยื่นนำส่ง</li>
                         <li>ให้คำปรึกษาทางโทรศัพท์และอีเมล</li>
@@ -645,7 +784,7 @@
                     <h3>แพ็กเกจมาตรฐาน</h3>
                     <p>เหมาะสำหรับธุรกิจ SME ทั่วไปหรือร้านค้า แบบนิติบุคคล</p>
                     <div class="service-price">เริ่มต้น 1,000 <small>บาท/เดือน</small></div>
-                    <ul style="text-align: left; margin: 20px 0; padding-left: 20px;">
+                    <ul>
                         <li>ยื่นงบการเงินและภาษีเงินได้นิติบุคคล (ภงด.50, 51 , สบช.3) พร้อมยื่นนำส่ง</li>
                         <li>จัดทำรายงานทางการเงินประจำเดือน</li>
                         <li>ให้คำปรึกษาทางโทรศัพท์และอีเมล</li>
@@ -664,29 +803,32 @@
             <h2>พร้อมปล่อยงานบัญชีให้มืออาชีพหรือยัง?</h2>
             <p>ติดต่อเราวันนี้เพื่อรับคำปรึกษาฟรี ไม่มีค่าใช้จ่าย ไม่ผูกมัดใดๆ เราพร้อมช่วยให้ธุรกิจของคุณก้าวไปข้างหน้าโดยไม่ต้องกังวลเรื่องบัญชีและภาษีอีกต่อไป</p>
             
-            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px;">
-                <div style="text-align: center;">
+            <div class="cta-contact-grid">
+                <div class="cta-contact-item">
                     <div style="background-color: white; color: var(--text-dark); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 30px;">
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <h3 style="font-family: 'Kanit', sans-serif; margin-bottom: 10px;">โทรเลย</h3>
-                    <p style="font-size: 24px; font-weight: 700;">096-234-9390</p>
+                    <p style="font-size: 20px; font-weight: 700;">096-234-9390</p>
                 </div>
                 
-                <div style="text-align: center;">
-                    <div style="background-color: white; color: var(--text-dark); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 30px;">
-                        <i class="fas fa-line"></i>
-                    </div>
+                <!-- เปลี่ยนไอคอน LINE เป็น QR Code -->
+                <div class="cta-contact-item">
+                    <!-- ใช้ QR Code แทนไอคอน -->
+                    <img src="https://sarawutc6689-cpu.github.io/tkacc39/QRLineTK.jpg" 
+                         alt="QR Code LINE @tkaccounting" 
+                         class="cta-qr-code"
+                         onclick="window.open('https://line.me/ti/p/@tkaccounting', '_blank')">
                     <h3 style="font-family: 'Kanit', sans-serif; margin-bottom: 10px;">ไลน์</h3>
-                    <p style="font-size: 24px; font-weight: 700;">@tkaccounting</p>
+  
                 </div>
                 
-                <div style="text-align: center;">
+                <div class="cta-contact-item">
                     <div style="background-color: white; color: var(--text-dark); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 30px;">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3 style="font-family: 'Kanit', sans-serif; margin-bottom: 10px;">อีเมล</h3>
-                    <p style="font-size: 20px; font-weight: 700;">info.tkacc39@gmail.com</p>
+                    <p style="font-size: 20px; font-weight: 700;">pooh_k39@hotmail.com</p>
                 </div>
             </div>
             
@@ -733,12 +875,23 @@
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
-                        <span>info.tkacc39@gmail.com</span>
+                        <span>pooh_k39@hotmail.com</span>
                     </div>
-                    <div class="contact-info">
-                        <i class="fas fa-line"></i>
-                        <span>@tkaccounting</span>
+                    
+                    <!-- QR Code ใน Footer -->
+                    <div class="contact-info qr-code">
+                        <div class="qr-code-container">
+                            <img src="https://sarawutc6689-cpu.github.io/tkacc39/QRLineTK.jpg" 
+                                 alt="QR Code LINE @tkaccounting" 
+                                 class="qr-code-image"
+                                 onclick="window.open('https://line.me/ti/p/@tkaccounting', '_blank')">
+                            <div class="qr-code-text">
+                                <div><strong>ไลน์</strong></div>
+                                <div>สแกนเพื่อเพิ่มเพื่อน</div>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="contact-info">
                         <i class="fas fa-clock"></i>
                         <span>จันทร์-เสาร์ 8:30-17:30 น.</span>
@@ -757,10 +910,12 @@
         // เพิ่มเอฟเฟกต์เมื่อคลิกที่ปุ่มโทร
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
             link.addEventListener('click', function() {
-                gtag('event', 'phone_call', {
-                    'event_category': 'engagement',
-                    'event_label': 'call_button_click'
-                });
+                if(typeof gtag !== 'undefined') {
+                    gtag('event', 'phone_call', {
+                        'event_category': 'engagement',
+                        'event_label': 'call_button_click'
+                    });
+                }
             });
         });
         
@@ -797,6 +952,46 @@
             button.addEventListener('click', function() {
                 const buttonText = this.textContent.trim();
                 console.log(`ผู้ใช้คลิกปุ่ม: ${buttonText}`);
+            });
+        });
+        
+        // เพิ่มฟังก์ชันสำหรับคลิกที่ QR Code (สำหรับทั้งสองที่)
+        document.querySelectorAll('.qr-code-image, .cta-qr-code').forEach(qrCode => {
+            qrCode.addEventListener('click', function() {
+                window.open('https://line.me/ti/p/@tkaccounting', '_blank');
+                if(typeof gtag !== 'undefined') {
+                    gtag('event', 'qr_code_click', {
+                        'event_category': 'engagement',
+                        'event_label': 'line_qr_code'
+                    });
+                }
+            });
+        });
+        
+        // ตรวจสอบว่า QR Code โหลดได้หรือไม่
+        window.addEventListener('load', function() {
+            const qrCodes = document.querySelectorAll('.qr-code-image, .cta-qr-code');
+            qrCodes.forEach(qrCode => {
+                qrCode.addEventListener('error', function() {
+                    console.error('QR Code ไม่สามารถโหลดได้: ' + this.src);
+                    // ถ้า QR Code โหลดไม่ได้ ให้ใช้ placeholder
+                    this.src = 'https://via.placeholder.com/' + 
+                               (this.classList.contains('cta-qr-code') ? '100x100' : '80x80') + 
+                               '/00c853/ffffff?text=QR+Code';
+                    this.alt = 'QR Code กำลังโหลด...';
+                    
+                    // แสดงข้อความเตือน
+                    const warningDiv = document.createElement('div');
+                    warningDiv.className = 'qr-warning';
+                    warningDiv.innerHTML = '<small style="color: #ff9800;">⚠️ กรุณาอัปโหลดไฟล์ QRLineTK.jpg ไปยัง GitHub</small>';
+                    warningDiv.style.marginTop = '5px';
+                    
+                    const parent = this.parentElement;
+                    if(parent.querySelector('.qr-warning')) {
+                        parent.removeChild(parent.querySelector('.qr-warning'));
+                    }
+                    parent.appendChild(warningDiv);
+                });
             });
         });
     </script>
